@@ -7,8 +7,10 @@
 #include <string.h>
 
 
-enum CAMERAS { GERAL = 1, BRINQUEDOS};
+enum CAMERAS { GERAL = 1, BRINQUEDOS, PRIMEIRA};
+enum BRINQUEDO { RODA = 1, CARROSSEL, XICARA};
 int modoCAM = GERAL;            //variável responsável por guardar o modo de câmera que está sendo utilizado
+int foco = RODA;
 
 int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na função posicionaCamera
 int xCursor, yCursor, zCursor;  //guarda o centro do cursor
@@ -38,22 +40,25 @@ void teclado(unsigned char key, int x, int y) {
             exit(0);
             break;
         case 's':   //andar pelo plano X-Z utilizando W A S D
-            xCursor++;
-            break;
-        case 'w':
-            xCursor--;
-            break;
-        case 'a':
             zCursor++;
             break;
-        case 'd':
+        case 'w':
             zCursor--;
+            break;
+        case 'a':
+            xCursor--;
+            break;
+        case 'd':
+            xCursor++;
             break;
         case '1':
             modoCAM = GERAL;
             break;
         case '2':
             modoCAM = BRINQUEDOS;
+            break;
+				case '3':
+            modoCAM = PRIMEIRA;
             break;
 				case 'l':
 						if(light)
@@ -64,6 +69,21 @@ void teclado(unsigned char key, int x, int y) {
         default:
             break;
     }
+}
+
+void special(int key, int x, int y){
+	switch(key){
+		case GLUT_KEY_RIGHT:
+			foco++;
+			if(foco>XICARA)
+				foco=RODA;
+			break;
+		case GLUT_KEY_LEFT:
+			foco--;
+			if(foco<RODA)
+				foco=XICARA;
+			break;
+	}
 }
 
 //capturar posicionamento do mouse
@@ -169,10 +189,30 @@ void desenhaRoda(float angulo){
 	glPopMatrix();
 }
 
+void desenhaCarrossel(float x, float y, float z, float angulo){
+	glColor3f(0.5,0.5,0.5);
+	glPushMatrix();
+		glTranslatef(x,y,z);
+		glutSolidCube(10);
+		glRotatef(angulo, 0, 1, 0);
+		glRotatef(90, 1, 0, 0);
+		glColor3f(0,0,0);
+		glutWireTorus(5, 10, 10, 10);
+	glPopMatrix();
+}
+
+void desenhaXicara(float x, float y, float z, float tamanho){
+	glColor3f(0.8,0.4,0.6);
+	glPushMatrix();
+		glTranslatef(x,y+tamanho,z);
+		glutWireTeapot(tamanho);
+	glPopMatrix();
+}
+
 //função que desenhará tudo o que aparece na tela
 void desenhaCena() {
 		float corluz[4]={0.5,0.5,0.5,1};
-		int i, j, k;
+
     //esfera de raio 100
     camera.x = 100 * sin(phi) * cos(teta);  //coordenada x denotada em coordenadas esféricas
     camera.z = 100 * sin(phi) * sin(teta); //coordenada z denotada em coordenadas esféricas
@@ -188,16 +228,34 @@ void desenhaCena() {
     // uso de cada um
     switch (modoCAM) {
 	    case BRINQUEDOS:
-	        gluLookAt(xCursor+0, 20, zCursor+0,
-	            xCursor+camera.x, camera.y, zCursor+camera.z,
-	            0, 1, 0);
-	        break;
-
+				switch(foco){
+					case RODA:
+						gluLookAt(0, 20, 50,
+											0, 0, 0,
+											0, 1, 0);
+						break;
+					case CARROSSEL:
+						gluLookAt(-40, 20, 50,
+											-40, 0, 20,
+											0, 1, 0);
+						break;
+					case XICARA:
+						gluLookAt(20, 20, 10,//câmera posicionada na casca da esfera calculada (terceira pessoa)
+											20, 0, -20,
+											0, 1, 0);
+						break;
+				}
+				break;
+			case PRIMEIRA:
+				gluLookAt(xCursor, 20, zCursor,
+						xCursor+camera.x, camera.y+20, zCursor+camera.z,
+						0, 1, 0);
+				break;
 			case GERAL:
 	    default:
-    		gluLookAt(0, 100, 100,   // Z=200
-                  0, 0, 0,    // (0, 0, 0) origem do mundo
-                  0, 1, 0);  //nesse exemplo mais simples, estamos no ponto X=Y=Z=200 olhando para o ponto 0
+    		gluLookAt(xCursor, 100, zCursor+100,
+                	xCursor+camera.x, camera.y, zCursor+camera.z,
+                  0, 1, 0);
 				break;
     }
 
@@ -222,6 +280,8 @@ void desenhaCena() {
 		desenhaChao();
 		desenhaFloresta();
 		desenhaRoda(anguloRoda);
+		desenhaXicara(20,0,-20, 10);
+		desenhaCarrossel(-40,0,20, anguloRoda);
     glutSwapBuffers();
 }
 
@@ -241,7 +301,8 @@ int main(int argc, char *argv[]) {
     // atualização próxima de 60fps (1000/16 = 62.5 fps
     glutTimerFunc(16, atualiza, 16);
 
-    glutKeyboardFunc(teclado);
+    glutSpecialFunc(special);
+		glutKeyboardFunc(teclado);
     // usada para capturar o posicionamento do mouse
     glutPassiveMotionFunc(posicionaCamera);
 
