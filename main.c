@@ -19,7 +19,7 @@ int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na funç�
 int xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
 float anguloRoda=0, posicaoQueda=0, vQueda;
-int light=1;
+int light=0;
 
 unsigned int texGround;
 
