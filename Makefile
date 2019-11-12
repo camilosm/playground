@@ -2,7 +2,7 @@ compilar:
 	@gcc main.c -lGL -lglut -lSOIL -lGLU -lGLEW -lm -o playground.o
 	@echo "Compilado!"
 run: compilar
-	@echo "Executando Pong."
+	@echo "Executando."
 	@./playground.o
 	@echo "Fim."
 clean:
