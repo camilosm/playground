@@ -11,14 +11,14 @@
 
 
 enum CAMERAS { GERAL = 1, BRINQUEDOS, PRIMEIRA};
-enum BRINQUEDO { RODA = 1, CARROSSEL, XICARA};
+enum BRINQUEDO { RODA = 1, CARROSSEL, QUEDA, XICARA};
 int modoCAM = GERAL;            //variável responsável por guardar o modo de câmera que está sendo utilizado
 int foco = RODA;
 
 int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na função posicionaCamera
 int xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
-float anguloRoda=0;
+float anguloRoda=0, posicaoQueda=0, vQueda;
 int light=1;
 
 unsigned int texGround;
@@ -145,9 +145,15 @@ void posicionaCamera(int x, int y){
 
 // callback de atualização
 void atualiza(int time) {
-    anguloRoda+=0.1;
+    anguloRoda+=0.5;
 		if(anguloRoda>360)
 			anguloRoda=0;
+		if(posicaoQueda>=50)
+			vQueda=-1;
+		if(posicaoQueda<=5)
+			vQueda=0.2;
+		posicaoQueda+=vQueda;
+
 		glutPostRedisplay();
     glutTimerFunc(time, atualiza, time);
 }
@@ -188,7 +194,6 @@ void desenhaChao(){
 }
 
 void desenhaArvore(float x, float y, float z){
-	// void glutSolidCone(GLdouble base, GLdouble height, GLint slices, GLint stacks);
 	glColor3f((float)66/255, (float)99/255, (float)81/255);
 	glPushMatrix();
 		glTranslatef(x, y, z);
@@ -212,27 +217,27 @@ void desenhaFloresta(){
 }
 
 void desenhaRoda(float angulo){
-	glColor3f(0.5,0.5,0.5);
+	glColor3f(0.7,0.7,0.7);
 	glPushMatrix();
 		glPushMatrix();
-			glutSolidCube(10);
+			glutSolidCube(15);
 		glPopMatrix();
 		glTranslatef(0, 10, 0);
 		glRotatef(angulo, 0, 0, 1);
-		glColor3f(0,0,0);
-		glutWireTorus(5, 10, 10, 10);
+		glColor3f(0.5,0.5,0.5);
+		glutSolidTorus(5, 10, 10, 6);
 	glPopMatrix();
 }
 
 void desenhaCarrossel(float x, float y, float z, float angulo){
-	glColor3f(0.5,0.5,0.5);
+	glColor3f(0.7,0.7,0.7);
 	glPushMatrix();
 		glTranslatef(x,y,z);
-		glutSolidCube(10);
+		glutSolidCube(15);
 		glRotatef(angulo, 0, 1, 0);
 		glRotatef(90, 1, 0, 0);
-		glColor3f(0,0,0);
-		glutWireTorus(5, 10, 10, 10);
+		glColor3f(0.5,0.5,0.5);
+		glutSolidTorus(5, 15, 10, 8);
 	glPopMatrix();
 }
 
@@ -241,6 +246,20 @@ void desenhaXicara(float x, float y, float z, float tamanho){
 	glPushMatrix();
 		glTranslatef(x,y+tamanho,z);
 		glutWireTeapot(tamanho);
+	glPopMatrix();
+}
+
+void desenhaQueda(float x, float y, float z, int posicao){
+	glColor3f(0.7,0.7,0.7);
+	glPushMatrix();
+		glTranslatef(x,y,z);
+		glPushMatrix();
+			glScalef(1,20,1);
+			glutSolidCube(5);
+		glPopMatrix();
+		glColor3f(0.5,0.5,0.5);
+		glTranslatef(0,posicao,0);
+		glutSolidCube(8);
 	glPopMatrix();
 }
 
@@ -274,9 +293,14 @@ void desenhaCena() {
 											-40, 0, 20,
 											0, 1, 0);
 						break;
+					case QUEDA:
+						gluLookAt(60, 20, -20,
+											60, 20, 50,
+											0, 1, 0);
+						break;
 					case XICARA:
-						gluLookAt(20, 20, 10,//câmera posicionada na casca da esfera calculada (terceira pessoa)
-											20, 0, -20,
+						gluLookAt(50, 10, 10,
+											50, 10, -20,
 											0, 1, 0);
 						break;
 				}
@@ -315,8 +339,9 @@ void desenhaCena() {
 		desenhaChao();
 		desenhaFloresta();
 		desenhaRoda(anguloRoda);
-		desenhaXicara(20,0,-20, 10);
+		desenhaXicara(50,0,-20, 10);
 		desenhaCarrossel(-40,0,20, anguloRoda);
+		desenhaQueda(60, 0, 50, posicaoQueda);
     glutSwapBuffers();
 }
 
