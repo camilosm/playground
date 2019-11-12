@@ -59,4 +59,4 @@ Thiago Rodrigues da Silva
 
 @fegemo: Professor da disciplina :man_teacher:
 
-Esse TP podia ser muito mais, mas infelizmente não tivemos problemas durante o prazo e ficamos sem tempo :disappointed:
+Esse TP podia ser muito mais, mas infelizmente nós tivemos problemas durante o prazo e ficamos sem tempo :disappointed:
