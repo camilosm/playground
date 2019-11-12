@@ -5,6 +5,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_mixer.h>
+
 
 
 enum CAMERAS { GERAL = 1, BRINQUEDOS, PRIMEIRA};
@@ -33,6 +36,36 @@ unsigned int carregarTextura(char* arquivo){
         printf("Erro carregando a textura '%s': '%s'\n", arquivo, SOIL_last_result());
     return id;
 }
+
+void tocar_musica(char const nome[40], int loop) {
+    Mix_Chunk *som = NULL;
+    int canal;
+    int canal_audio = 2;
+    int taxa_audio = 22050;
+    Uint16 formato_audio = AUDIO_S16SYS;
+    int audio_buffers = 4096;
+
+    if(Mix_OpenAudio(taxa_audio, formato_audio, canal_audio, audio_buffers)){
+        printf("Falha ao tocar musica: %s\n", Mix_GetError());
+				return;
+    }
+
+    som = Mix_LoadWAV(nome);
+
+    if(som == NULL){
+        printf("Falha ao tocar musica: %s\n", Mix_GetError());
+				return;
+    }
+
+    Mix_HaltChannel(-1);
+    canal = Mix_PlayChannel(-1, som, loop);
+
+    if (canal == -1) {
+        printf("Falha ao tocar musica: %s\n", Mix_GetError());
+				return;
+    }
+}
+
 
 void teclado(unsigned char key, int x, int y) {
     switch (key) {
@@ -137,6 +170,8 @@ void inicializa(){
     zCursor = 0;
 
 		texGround=carregarTextura("ground.png");
+
+		tocar_musica("music.ogg", -1);
 }
 
 void desenhaChao(){

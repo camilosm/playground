@@ -1,0 +1,202 @@
+===========================================================================
+=================== ENGLISH (VERSION FRANCAISE EN BAS) ====================
+===========================================================================
+
+GENERAL INFORMATION ABOUT THIS MUSIC
+---------------------------------------------------------------------------
+
+"The Legend of Zelda - Main Theme (Introduction)"
+Duration/Playing Time: 01:22
+
+This music covers the introduction sequence soundtrack from The Legend of Zelda.
+
+Arrangement recorded and produced by Maxime Abbey on 2011-02-20 (version 1.0) using Arachno SoundFont.
+From original MIDI music composed by Christian Salmeron.
+Arachno SoundFont and other arrangements are available for free download on my website: http://www.arachnosoft.com
+
+Game: The Legend of Zelda
+Level: Main Theme (Introduction)
+Game developer(s): Nintendo
+Released by: Nintendo
+Platform: Nintendo Entertainment System (NES) aka. Famicom
+Release year: 1986
+
+Source is a MIDI arrangement based on the original music by Koji Kondo.
+This file is included with this arrangement for reference purposes.
+
+TECHNICAL INFORMATION ABOUT THIS MUSIC
+---------------------------------------------------------------------------
+
+The purpose of this audio track is to demonstrate that MIDI files can actually sound very good when played with a nice synthesizer. 
+I used the free SynthFont SoundFont-compatible software synthesizer (http://www.synthfont.com) to reproduce a MIDI file using Arachno SoundFont, a custom General MIDI SoundFont bank I designed for my Sound Blaster Live! soundcard.
+
+I've been working on Arachno SoundFont since 2003, to enhance the sounds of my MIDI files.
+It features many famous sounds from the best synthesizers by Roland (D-50, Sound Canvas...), Korg (M1, X5...), Yamaha (MU, Clavinova...), Fairlight (CMI), E-MU (Emulator), Ensoniq...
+
+This arrangement has been rendered from the above-mentioned MIDI file, directly from SynthFont 1.551 using my Arachno SoundFont bank, then converted into compressed OGG Vorbis format (quality 7, average bitrate of 224 kbps) using Audacity 1.3.12 and Xiph.Org libVorbis I 20101101.
+It has been recorded dry, without any added effects.
+
+Arachno SoundFont, as well as MP3 and OGG versions of this recording, are available for free on my website, located at the following address: http://www.arachnosoft.com
+
+LICENSE AND TERMS OF USE OF THIS MUSIC
+---------------------------------------------------------------------------
+
+* MISCELLANEOUS
+
+This music is distributed for FREE for your personal listening and editing pleasure.
+
+Anyway, its use implies the acceptance of a license and specific terms of use, as described below: this music is released as copyrighted under the "freeware" model, and absolutely not as part of the public domain.
+
+The same terms of license apply to all parts of this music, including samples and instruments, unless otherwise noted.
+Keep in mind that those terms may be modified by myself at any time without any notification.
+The official and latest version of this license is available on my website, located at http://www.arachnosoft.com.
+Be sure to check it when necessary.
+
+* DISTRIBUTION
+
+You are free to distribute this music to anyone you want, under any format, as long as you keep the final user informed about the original music in MIDI format and this arrangement recorded from it, their authors, and their official availability on my website, http://www.arachnosoft.com.
+
+If you want to distribute this music in another format than those I offer to you (MP3, OGG, etc.), I would like you to contact me before, to keep me informed on the use of this arrangement.
+
+You are of course free to distribute this arrangement in its original package, as found on my website.
+I'd like to be also informed by e-mail if you do so.
+
+In any case, you MUST clearly specify that this arrangement:
+- has been recorded and produced by me, Maxime Abbey;
+- using original material and software from third-party authors, mentioned above;
+- and that its original and latest version is available on my website, http://www.arachnosoft.com.
+
+Moreover, the distribution must be done freely, or in exchange of a small amount of money aimed at covering distribution fees and/or supports (CD-ROM, disks...).
+Any commercial distribution is covered by the commercial usage terms of this license, as described below.
+
+* USAGE
+
+You are entirely free to use and listen to this music for your personal pleasure and to convert in any format to suit your listening needs, as long as it does not harm anyone and complies with the terms of this license.
+
+If you want to use this music on your own creations (software, website, CD-ROM, presentation, magazine, etc), whatever is your project, I'd ask you to contact the authors of the original MIDI material first, for authorization and particular terms of use.
+
+This music being produced from freely distributed third-party elements, any commercial use without prior written consent is forbidden. I also invite you to reach the original authors to get their commercial usage policies, if any.
+
+In any case, please keep me informed of any redistribution to third-parties.
+
+ABOUT THE ARRANGEMENT'S AUTHOR
+---------------------------------------------------------------------------
+
+My name is Maxime Abbey, I was born on October 28th, 1985 in France.
+
+My website is located at http://www.arachnosoft.com. You'll find there all my freeware programs (including utilities, 2D and 3D games) and all my music-related work, including this arrangement and the Arachno SoundFont bank I used to produce it.
+
+You can contact me by e-mail at contact@arachnosoft.com, for any purposes.
+Don't hesitate to do so, my native language is French, but you can write me in English as well.
+All e-mails will be read, your support is always appreciated!
+
+TO FINISH...
+---------------------------------------------------------------------------
+
+Thanks for listening to this arrangement!
+I hope you like it...
+
+I would like also to thank all people who created the tools and samples I've used to produce it, mainly Kenneth Rundt, SynthFont's author.
+
+As a final word, please accept all my apologies for any mistakes you could find in this English documentation, as my native language is French.
+
+ENJOY THIS ARRANGEMENT! I'M WAITING FOR YOUR COMMENTS...
+
+===========================================================================
+================================ FRANCAIS =================================
+===========================================================================
+
+INFORMATIONS GENERALES AU SUJET DE CETTE MUSIQUE
+---------------------------------------------------------------------------
+
+"The Legend of Zelda - Main Theme (Introduction)"
+Durée / Temps de Lecture : 01:22
+
+Cette musique est celle du générique d'introduction du jeu The Legend of Zelda.
+
+Arrangement produit et enregistré par Maxime Abbey le 20/02/2011 (version 1.0) en utilisant Arachno SoundFont.
+D'après une musique MIDI composée à l'origine par Christian Salmeron.
+Arachno SoundFont et d'autres arrangements sont disponibles en téléchargement gratuit sur mon site : http://www.arachnosoft.com
+
+Jeu : The Legend of Zelda
+Niveau : Main Theme (Introduction)
+Développeurs du jeu : Nintendo
+Distribué par : Nintendo
+Support : Nintendo Entertainment System (NES) aka. Famicom
+Date de sortie : 1986
+
+Le fichier MIDI source a été composé à partir de la musique originale du jeu, créée par Koji Kondo.
+Ce fichier est inclus avec cet arrangement à titre de référence.
+
+INFORMATIONS TECHNIQUES SUR CETTE MUSIQUE ET COMMENT L'UTILISER
+---------------------------------------------------------------------------
+
+Le but de cette piste audio est de démontrer que les fichiers MIDI peuvent produire un excellent son lorsqu'ils sont joués sur un très bon synthétiseur.
+Ici, j'ai utilisé le synthétiseur logiciel SynthFont, compatible SoundFont (http://www.synthfont.com) pour reproduire un fichier MIDI à l'aide d'Arachno SoundFont, une banque de sons General MIDI au format SoundFont, que j'ai créée pour ma Sound Blaster Live!.
+
+Je travaille sur cette banque depuis 2003, afin d'améliorer le rendu de mes fichiers MIDI.
+Cette banque comporte de nombreux sons célèbres issus des meilleurs synthétiseurs de chez Roland (D-50, Sound Canvas...), Korg (M1, X5...), Yamaha (MU, Clavinova...), Fairlight (CMI), E-MU (Emulator), Ensoniq...
+
+Cet arrangement a été produit à partir du fichier MIDI mentionné plus haut, directement depuis SynthFont 1.551 avec ma banque Arachno SoundFont, puis converti en format OGG Vorbis compressé (qualité 7, bitrate moyen de 224 kbps) avec Audacity 1.3.12 et Xiph.Org libVorbis I 20101101.
+Il a été enregistré sans aucun effet ajouté.
+
+LICENCE ET CONDITIONS D'UTILISATION DE CETTE MUSIQUE
+---------------------------------------------------------------------------
+
+* GENERALITES
+
+Cette musique est distribuée GRATUITEMENT afin que vous puissiez l'écouter ou l'éditer avec plaisir.
+
+Toutefois, son utilisation implique l'acceptation d'une licence et de conditions d'utilisation spécifiques, telles que décrites ci-dessous : cette musique est distribuée sous copyright selon le modèle du "freeware", et n'est en aucun cas versée dans le domaine public.
+
+Les mêmes conditions d'utilisation s'appliquent à toutes les portions de cette musique, y compris les sons et les instruments, sauf mention contraire.
+Gardez à l'esprit que je peux à tout moment modifier ces conditions sans préavis.
+La dernière version officielle de cette licence est disponible sur mon site Web à l'adresse http://www.arachnosoft.com.
+Pensez à la consulter lorsque cela est nécessaire.
+
+* DISTRIBUTION
+
+Vous êtes libre de distribuer cette musique à qui vous voulez, sous n'importe quel format, du moment que vous teniez l'utilisateur final informé au sujet de la musique d'origine en format MIDI et de cet arrangement qui en découle, leurs auteurs, et de leur disponibilité officielle sur mon site Web, http://www.arachnosoft.com.
+
+Si vous souhaitez distribuer cette musique dans un format différent de celui que je vous propose (MP3, OGG, etc.), j'aimerais que vous me contactiez au préalable, de façon à me tenir informé de l'utilisation de cet arrangement.
+
+Vous êtes bien entendu libre de distribuer cet arrangement sous sa forme d'origine, telle que vous la trouvez sur mon site Web.
+Toutefois, j'aimerais également en être tenu informé.
+
+Dans tous les cas, vous DEVEZ clairement spécifier que cet arrangement :
+- a été enregistré et produit par moi-même, Maxime Abbey ;
+- en utilisant des éléments et logiciels créés par des auteurs tiers, mentionnés plus haut ;
+- et qu'il reste disponible dans sa plus récente version sur mon site, http://www.arachnosoft.com.
+
+De plus, la distribution doit être faite gratuitement, ou en échange d'un faible montant monétaire destiné à couvrir les frais de distribution et/ou les supports utilisés (CD-ROM, disques).
+Toute distribution commerciale est couverte par les conditions d'utilisations commerciales de cette licence, telles que décrites ci-dessous.
+
+* UTILISATION
+
+Vous êtes entièrement libre d'utiliser et d'écouter cette musique pour votre plaisir personnel et de la convertir dans tout format destiné à couvrir vos besoins d'écoute, du moment que cela ne cause pas de tort à autrui, et que ce soit fait en conformité avec les termes de cette licence.
+
+Si vous souhaitez utiliser cette musique au sein de vos propres créations (logiciels, site Web, présentation, CD-ROM, magazine, etc.), quel que soit votre projet, je vous invite en premier lieu à contacter les auteurs du fichier MIDI original pour obtenir les autorisations nécessaires et les conditions d'utilisation.
+
+Cette musique ayant été produite à partir d'éléments fournis gratuitement par des tiers, toute utilisation commerciale sans autorisation préalable est interdite. A cet effet, je vous invite également à vous rapprocher des auteurs originaux pour obtenir les conditions d'utilisation de leur travail à titre commercial.
+
+Dans tous les cas, merci de me tenir informé de toute redistribution à un tiers.
+
+A PROPOS DE L'AUTEUR DE CET ARRANGEMENT
+---------------------------------------------------------------------------
+
+Je m'appelle Maxime Abbey, je suis né le 28 octobre 1985 en France.
+
+Mon site Web est disponible à l'adresse http://www.arachnosoft.com. Vous y retrouverez mes logiciels gratuits (dont des utilitaires et des jeux 2D/3D) et l'ensemble de mes créations audio et musicales, comprenant cet arrangement ainsi que la banque Arachno SoundFont que j'ai utilisée pour le produire.
+
+Pour toute demande, vous pouvez me contacter par e-mail à l'adresse contact@arachnosoft.com.
+N'hésitez pas à le faire, tous les e-mails que je reçois sont lus, et votre support est toujours apprécié !
+
+POUR FINIR...
+---------------------------------------------------------------------------
+
+Merci d'écouter cet arrangement !
+En espérant que vous l'appréciez...
+
+J'aimerais également remercier toutes les personnes qui ont créé les outils et les sons que j'ai utilisés pour le produire, principalement Kenneth Rundt, l'auteur de SynthFont.
+
+SUR CE, BONNE ECOUTE ! J'ATTENDS VOS COMMENTAIRES...
