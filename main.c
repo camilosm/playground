@@ -14,6 +14,7 @@ int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na funç�
 int xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
 float anguloRoda=0;
+int light=1;
 
 unsigned int texGround;
 
@@ -54,6 +55,12 @@ void teclado(unsigned char key, int x, int y) {
         case '2':
             modoCAM = BRINQUEDOS;
             break;
+				case 'l':
+						if(light)
+							light--;
+						else
+							light++;
+						break;
         default:
             break;
     }
@@ -164,7 +171,8 @@ void desenhaRoda(float angulo){
 
 //função que desenhará tudo o que aparece na tela
 void desenhaCena() {
-	int i, j, k;
+		float corluz[4]={0.5,0.5,0.5,1};
+		int i, j, k;
     //esfera de raio 100
     camera.x = 100 * sin(phi) * cos(teta);  //coordenada x denotada em coordenadas esféricas
     camera.z = 100 * sin(phi) * sin(teta); //coordenada z denotada em coordenadas esféricas
@@ -193,6 +201,24 @@ void desenhaCena() {
 				break;
     }
 
+		if(light==1){
+			glEnable(GL_LIGHT0);
+			glEnable(GL_LIGHTING);
+			glEnable(GL_LIGHT_MODEL_AMBIENT);
+			glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.5);
+			glLightfv(GL_LIGHT0, GL_POSITION, corluz);
+			glLightfv(GL_LIGHT0, GL_AMBIENT, corluz);
+			glLightfv(GL_LIGHT0, GL_DIFFUSE, corluz);
+			glLightfv(GL_LIGHT0, GL_SPECULAR, corluz);
+		}
+		else{
+			glDisable(GL_LIGHT0);
+			glDisable(GL_LIGHTING);
+			glDisable(GL_LIGHT_MODEL_AMBIENT);
+		}
+		glLightModelfv(GL_LIGHT_MODEL_AMBIENT, corluz);
+
+		glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, corluz);
 		desenhaChao();
 		desenhaFloresta();
 		desenhaRoda(anguloRoda);
