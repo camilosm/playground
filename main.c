@@ -13,6 +13,7 @@ int modoCAM = GERAL;            //variável responsável por guardar o modo de c
 int xMouse = 0, yMouse = 0;     //variáveis globais que serão usadas na função posicionaCamera
 int xCursor, yCursor, zCursor;  //guarda o centro do cursor
 float phi = 90, teta = 0;       //ângulos das coordenadas esféricas
+float anguloRoda=0;
 
 unsigned int texGround;
 
@@ -84,7 +85,10 @@ void posicionaCamera(int x, int y){
 
 // callback de atualização
 void atualiza(int time) {
-    glutPostRedisplay();
+    anguloRoda+=0.1;
+		if(anguloRoda>360)
+			anguloRoda=0;
+		glutPostRedisplay();
     glutTimerFunc(time, atualiza, time);
 }
 
@@ -145,9 +149,16 @@ void desenhaFloresta(){
 	}
 }
 
-void desenhaRoda(){
+void desenhaRoda(float angulo){
+	glColor3f(0.5,0.5,0.5);
 	glPushMatrix();
-		
+		glPushMatrix();
+			glutSolidCube(10);
+		glPopMatrix();
+		glTranslatef(0, 10, 0);
+		glRotatef(angulo, 0, 0, 1);
+		glColor3f(0,0,0);
+		glutWireTorus(5, 10, 10, 10);
 	glPopMatrix();
 }
 
@@ -176,7 +187,7 @@ void desenhaCena() {
 
 			case GERAL:
 	    default:
-    		gluLookAt(0, 200, 200,   // Z=200
+    		gluLookAt(0, 100, 100,   // Z=200
                   0, 0, 0,    // (0, 0, 0) origem do mundo
                   0, 1, 0);  //nesse exemplo mais simples, estamos no ponto X=Y=Z=200 olhando para o ponto 0
 				break;
@@ -184,7 +195,7 @@ void desenhaCena() {
 
 		desenhaChao();
 		desenhaFloresta();
-		desenhaRoda();
+		desenhaRoda(anguloRoda);
     glutSwapBuffers();
 }
 
