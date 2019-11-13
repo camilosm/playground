@@ -53,7 +53,7 @@ Thiago Rodrigues da Silva
 
 ## Agradecimentos:
 
-@arachnosoft: author of the music used (academic only!) :heart:
+@arachnosoft: autor do arquivo de som (uso acadêmico!) :heart:
 
 ## Desculpas:
 
