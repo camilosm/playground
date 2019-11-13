@@ -55,6 +55,8 @@ Thiago Rodrigues da Silva
 
 @arachnosoft: autor do arquivo de som (uso acadêmico!) :heart:
 
+@Agronault: monitor da disciplina que me salvou de um zero certo :heart:
+
 ## Desculpas:
 
 @fegemo: Professor da disciplina :man_teacher:
